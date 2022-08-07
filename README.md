@@ -1,15 +1,15 @@
 # Academia-MMRSV
 
 Ideias de projeto podem vir de:
-https://www.smartfit.com.br/?gclid=Cj0KCQjworiXBhDJARIsAMuzAuwcGpiybvAOxMEv3tIW5LTOkq5okqJubVxoM4Us7Re_9dOb-wZ5b90aAojwEALw_wcB
-https://leap.app/
+* https://www.smartfit.com.br/?gclid=Cj0KCQjworiXBhDJARIsAMuzAuwcGpiybvAOxMEv3tIW5LTOkq5okqJubVxoM4Us7Re_9dOb-wZ5b90aAojwEALw_wcB
+* https://leap.app/
 
 ## Integrantes do grupo
-José Rafael de Sousa Neto - rafael.sousa@ufrpe.br
-Maria Beatriz Arruda Vieira de Lima - mariabeatriz.lima@ufrpe.br
-Marina Cordeiro Mota - ninamota2003@gmail.com
-Stella Nazário Anacleto de Oliveira - stellanacleto@gmail.com
-Victor Miguel de Souza Soares - victor77miguel@gmail.com
+* José Rafael de Sousa Neto - rafael.sousa@ufrpe.br
+* Maria Beatriz Arruda Vieira de Lima - mariabeatriz.lima@ufrpe.br
+* Marina Cordeiro Mota - ninamota2003@gmail.com
+* Stella Nazário Anacleto de Oliveira - stellanacleto@gmail.com
+* Victor Miguel de Souza Soares - victor77miguel@gmail.com
 
 ## Descrição geral do projeto 
 O seguinte projeto, tem como principais funcionalidades implementar um sistema responsável pelo gerenciamento de uma academia, em que o cliente teria acesso ao seu plano e aos seus treinos diários, enquanto o administrador pelo registro de clientes, controle de sua conta e acompanhamento de treinos
