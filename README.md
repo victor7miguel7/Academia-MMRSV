@@ -12,7 +12,7 @@ Ideias de projeto podem vir de:
 * Victor Miguel de Souza Soares - victor77miguel@gmail.com
 
 ## Descrição geral do projeto 
-O seguinte projeto, tem como principal funcionalidade implementar um sistema responsável pelo gerenciamento de uma academia, em que estará disponível uma variada gama de de treinos adequados as devidas necessidades que o usuário possui, esse sistema seria acessado por um usuário através de sua senha e login, ele poderá ser um cliente, que terá a sua disposição a visualização do seu plano em vigor e os seus treinos diários, enquanto isso, existirá simultaneamente um  administrador do sistema que será responsável pelo registro de clientes, controle de sua conta e acompanhamento de treinos.
+O seguinte projeto, tem como principal funcionalidade implementar um sistema responsável pelo gerenciamento de uma academia, em que estará disponível uma variada gama de de treinos adequados as devidas necessidades que o usuário possui, esse sistema seria acessado por um usuário através de sua senha e login. Esse usuário, poderá ser um cliente, que terá a sua disposição a visualização do seu plano em vigor e os seus treinos diários, enquanto isso, também existirá simultaneamente um  administrador do sistema que será responsável pelo registro de clientes, controle de sua conta e acompanhamento de treinos.
 
 ## Requisitos do projeto
  * **REQ1** - O sistema deverá realizar login e cadastro. Este terá os usuários em geral e o Administrador.
