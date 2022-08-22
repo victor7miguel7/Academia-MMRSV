@@ -22,3 +22,5 @@ O seguinte projeto, tem como principal funcionalidade implementar um sistema res
  * **REQ5** - O cliente terá acesso e escolha de um plano, dentre eles o mensal, trimestral, semestral e anual.
  * **REQ6** - O cliente receberá um treino de acordo com os dados preenchidos previeamente.
  * **REQ7** - É estipulada uma data para o pagamento, caso seja ultrapassada, será realizada a cobrança de uma multa de acordo com os dias que ultrapassaram o limite.
+ * **REQ8** - O sistema deve permitir a consulta dos treinos diários, além da consulta da frequência
+ * **REQ9** - O sistema deve permitir o acompanhamento da evolução do cliente através da massa corporal
