@@ -5,10 +5,10 @@ import java.time.temporal.ChronoUnit;
 
 public class Cliente extends Usuario {
 
-	String genero;
-	double peso;
-	double altura;
-	double imc;
+	private String genero;
+	private double peso;
+	private double altura;
+	private double imc;
 
 	public Cliente(String nome, String email, String senha, LocalDate dtNascimento, String genero, double peso,
 			double altura) {
@@ -34,6 +34,11 @@ public class Cliente extends Usuario {
 		this.altura = altura;
 	}
 
+
+	public String getGenero() {
+		return genero;
+	}
+
 	public double getImc() {
 		return imc;
 	}
@@ -42,18 +47,14 @@ public class Cliente extends Usuario {
 		this.imc = imc;
 	}
 
-	public String getGenero() {
-		return genero;
-	}
-
 	public int calcularIdade(LocalDate dtNascimento) {
 		LocalDate hoje = LocalDate.now();
 		int idade = (int) dtNascimento.until(hoje, ChronoUnit.YEARS);
 		return idade;
 	}
 
-	public double calcularImc(double peso, double altura) {
-		return peso/(altura*altura);
+	public String toString() {
+		return "Imc " + imc;
 	}
-
+	
 }

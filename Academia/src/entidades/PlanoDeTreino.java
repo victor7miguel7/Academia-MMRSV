@@ -6,23 +6,23 @@ import java.time.format.DateTimeFormatter;
 public class PlanoDeTreino {
 	
 	private LocalDate dataInicio;
-	private LocalDateTime duracao;
+	private String duracao;
 	private Cliente cliente;
-	private Exercicio exercicio;
+	private Treino treino;
 	
-	public PlanoDeTreino(LocalDate dataInicio, LocalDateTime duracao, Cliente cliente,
-			Exercicio exercicio) {
+	public PlanoDeTreino(LocalDate dataInicio, String duracao, Cliente cliente,
+			Treino treino) {
 		this.dataInicio = dataInicio;
 		this.duracao = duracao;
 		this.cliente = cliente;
-		this.exercicio = exercicio;
+		this.treino = treino;
 	}
 
 	public LocalDate getDataInicio() {
 		return dataInicio;
 	}
 
-	public LocalDateTime getDuracao() {
+	public String getDuracao() {
 		return duracao;
 	}
 
@@ -30,13 +30,13 @@ public class PlanoDeTreino {
 		return cliente;
 	}
 
-	public Exercicio getTreino() {
-		return exercicio;
+	public Treino getTreino() {
+		return treino;
 	}
 
 	public String consultarPlano() {
 		return "PlanoDeTreino de " + cliente + "\nData de Inicio:" + dataInicio.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + 
-				"\nDuracao: " + duracao + "\nExercicio: " + exercicio;
+				"\nDuracao: " + duracao + "\nTreino: " + treino;
 	}
 
 }

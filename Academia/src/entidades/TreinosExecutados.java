@@ -6,17 +6,15 @@ import java.util.List;
 
 public class TreinosExecutados {
 	
-	private PlanoDeTreino plano;
 	private ArrayList<LocalDate> executados;
 	
 	//Construtor
-	public TreinosExecutados(PlanoDeTreino plano) {
-		this.plano = plano;
+	public TreinosExecutados() {
 		executados = new ArrayList<>();
 	}
 	// Gets
-	public PlanoDeTreino getPlano() {
-		return plano;
+	public ArrayList<LocalDate> getExecutados() {
+		return executados;
 	}
 	
 	//Métodos
@@ -28,11 +26,6 @@ public class TreinosExecutados {
             }                 
         }
 		return frequencia;		
-	}
-	
-	public List<PlanoDeTreino> acompanharMassaCorporal(){
-		return null;
-		
 	}
 	
 	public void executarTreino() {
