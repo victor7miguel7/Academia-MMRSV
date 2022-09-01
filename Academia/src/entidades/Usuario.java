@@ -3,7 +3,7 @@ package entidades;
 import java.time.LocalDate;
 
 public class Usuario {
-	
+	id
 	String nome;
 	String email;
 	String senha;

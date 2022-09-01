@@ -8,6 +8,8 @@ import dados.RepositorioGenerico;
 
 public class ControladorGenerico {
 	
+	singleton
+	
 	private IRepositorioGenerico<Exercicio> exercicios;
 	private IRepositorioGenerico<Treino> treinos;
 	private IRepositorioGenerico<PlanoDeTreino> PlanoDetreinos;
@@ -28,6 +30,12 @@ public class ControladorGenerico {
 
 	public IRepositorioGenerico<PlanoDeTreino> getPlanoDetreinos() {
 		return PlanoDetreinos;
+	}
+	
+	consultarFrequeciaCliente(Cliente c, Data inicio, Data fim) {
+		lista = repositorioTreinoExecutado.listar(c);
+		filtrar por data
+		return lista.size();
 	}
 	
 }

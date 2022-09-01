@@ -5,10 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Imc {
+public class ImcMedido {
 	private LocalDate data;
 	private Cliente cliente;
-	private List<Double> listaImc;
+	private double medidaImc;
 
 	public Imc(LocalDate data, Cliente cliente) {
 		this.data = data;
@@ -30,7 +30,7 @@ public class Imc {
 		return listaImc;
 	}
 
-	public double calcularImc() {
+	public static double calcularImcAux(cliente) {
 		double peso = cliente.getPeso();
 		double altura = cliente.getAltura();
 		double imc = peso / (altura * altura);

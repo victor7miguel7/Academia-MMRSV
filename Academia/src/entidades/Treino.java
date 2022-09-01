@@ -1,10 +1,10 @@
 package entidades;
 
+import java.util.List;
+
 public class Treino {
 	
-	private Exercicio e1;
-	private Exercicio e2;
-	private Exercicio e3;
+	private List<Exercicio> e1;
 	
 	public Treino(Exercicio e1, Exercicio e2, Exercicio e3) {
 		this.e1 = e1;

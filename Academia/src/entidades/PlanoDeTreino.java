@@ -8,7 +8,7 @@ public class PlanoDeTreino {
 	private LocalDate dataInicio;
 	private String duracao;
 	private Cliente cliente;
-	private Treino treino;
+	private List<Treino> treino;
 	
 	public PlanoDeTreino(LocalDate dataInicio, String duracao, Cliente cliente,
 			Treino treino) {

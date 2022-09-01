@@ -19,7 +19,7 @@ public class Principal {
 		ControladorGenerico cg = new ControladorGenerico();	
 		
 		Usuario p = new PersonalTrainer("João", "joao@gmail.com", "123456", LocalDate.of(2000, 5, 20), "34");
-		Usuario c = new Cliente("Maria", "maria@gmail.com", "m12345", LocalDate.of(1994, 7, 2), "F", 80.4, 1.63);
+		Usuario c = new Cliente("Maria", "maria@gmail.com", "m12345", LocalDate.of(1994, 7, 2), "F", 80, 1.63);
 		Exercicio e1 = new Exercicio("Costas", "A");
 		Exercicio e2 = new Exercicio("Pernas", "B");
 		Exercicio e3 = new Exercicio("Braços", "C");

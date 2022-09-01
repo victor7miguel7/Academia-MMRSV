@@ -3,6 +3,8 @@ package entidades;
 import java.time.LocalDate;
 
 public class PersonalTrainer extends Usuario{
+	
+	cref
 
 	private String id;
 	

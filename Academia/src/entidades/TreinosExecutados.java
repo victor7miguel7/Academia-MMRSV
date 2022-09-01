@@ -4,9 +4,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TreinosExecutados {
+public class TreinoExecutado {
+
 	
-	private ArrayList<LocalDate> executados;
+	cliente
+	treino
+	data
+	
+	private ArrayList<TreinoExecutado> executados;
 	
 	//Construtor
 	public TreinosExecutados() {
