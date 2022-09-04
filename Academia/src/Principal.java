@@ -63,7 +63,7 @@ public class Principal {
 			System.out.println(cg.getRepositorioDePlanoDetreinos().listar().get(i).toString());
 		}
 		
-//		int frequencia = cg.consultarFrequenciaCliente((Cliente) cliente1 , LocalDate.of(2022, 8, 20), LocalDate.of(2022, 11, 20));
-//		System.out.printf("A frequencia foi de %d dia no mes de Setembro\n", frequencia);			
+	   int frequencia = cg.consultarFrequenciaCliente((Cliente) cliente1 , LocalDate.of(2022, 8, 20), LocalDate.of(2022, 11, 20));
+	   System.out.printf("A frequencia foi de %d dia no mes de Setembro\n", frequencia);			
 	}
 }
