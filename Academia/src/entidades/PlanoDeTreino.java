@@ -2,8 +2,6 @@ package entidades;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 import dados.IRepositorioGenerico;
 import dados.RepositorioGenerico;
@@ -40,7 +38,7 @@ public class PlanoDeTreino {
 
 	public String toString() {
 		return "\nPlanoDeTreino de " + cliente + "\nData de Inicio:" + dataInicio.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + 
-				"\nDuracao: " + duracao  + treinos.listar();
+				"\nDuracao: " + duracao.getDays() + " dias"  + treinos.listar();
 	}
 
 }
