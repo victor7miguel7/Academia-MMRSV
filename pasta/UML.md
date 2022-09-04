@@ -1,2 +1,2 @@
-![download](https://user-images.githubusercontent.com/101372401/188295817-f3128225-d9f2-4c94-a686-7f731af9b27b.png)
+![download](https://user-images.githubusercontent.com/101372401/188334529-6dbad58d-f0ea-4e5d-beaf-af10e47a64ce.png)
 
