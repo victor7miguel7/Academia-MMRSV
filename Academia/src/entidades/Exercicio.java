@@ -38,6 +38,6 @@ public class Exercicio {
 	
 	public int getQtdDeRepeticao() {
 		return qtdDeRepeticao;
-		//testee
+		//testeee
 	}
 }
