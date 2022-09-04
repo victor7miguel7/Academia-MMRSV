@@ -27,26 +27,20 @@ public class ImcMedido {
 		return medidaImc;
 	}
 
-	public static double calcularImcAux(Cliente cliente) {
-		double peso = cliente.getPeso();
-		double altura = cliente.getAltura();
-		double imc = peso / (altura * altura);
+	
 
-		return imc;
-	}
-
-	public void atualizarImc() {
-		listaImc.add(calcularImc());
-		
-	}
-
-	public List<Double> acompanharMassaCorporal() {
-		List<Double> imc = new ArrayList<>();
-		for (int i = 0; i < this.listaImc.size(); i++) {
-			imc.add(listaImc.get(i));
-		}
-		return imc;
-	}
+//	public void atualizarImc() {
+//		listaImc.add(calcularImc());
+//		
+//	}
+//
+//	public List<Double> acompanharMassaCorporal() {
+//		List<Double> imc = new ArrayList<>();
+//		for (int i = 0; i < this.listaImc.size(); i++) {
+//			imc.add(listaImc.get(i));
+//		}
+//		return imc;
+//	}
 
 	@Override
 	public String toString() {

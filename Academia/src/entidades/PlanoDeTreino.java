@@ -35,9 +35,9 @@ public class PlanoDeTreino {
 		return treinos;
 	}
 
-	public String consultarPlano() {
+	public String toString() {
 		return "PlanoDeTreino de " + cliente + "\nData de Inicio:" + dataInicio.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + 
-				"\nDuracao: " + duracao;
+				"\nDuracao: " + duracao + ", treino: " + treinos;
 	}
 
 }

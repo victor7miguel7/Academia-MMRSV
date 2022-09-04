@@ -16,6 +16,7 @@ public class Cliente extends Usuario {
 		this.genero = genero;
 		this.peso = peso;
 		this.altura = altura;
+		this.imc = calcularImc();
 	}
 
 	public double getPeso() {
@@ -47,9 +48,18 @@ public class Cliente extends Usuario {
 		int idade = (int) dtNascimento.until(hoje, ChronoUnit.YEARS);
 		return idade;
 	}
+	
+	public double calcularImc() {
+		double imc = peso / (altura * altura);
 
-	public String toString() {
-		return "Imc " + imc;
+		return imc;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente: " + super.getNome();
+	}
+
+	
 
 }

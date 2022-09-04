@@ -1,23 +1,28 @@
 package entidades;
 
-import java.util.ArrayList;
-import java.util.List;
+import dados.IRepositorioGenerico;
+import dados.RepositorioGenerico;
 
 public class Treino {
 
 	private String tipo;
-	private List<Exercicio> exercicios;
+	private IRepositorioGenerico<Exercicio> exercicios;
 
 	public Treino(String tipo) {
 		this.tipo = tipo;
-		this.exercicios = new ArrayList<>();
+		this.exercicios = new RepositorioGenerico<>();
 	}
 
 	public String getTipo() {
 		return tipo;
 	}
 
-	public List<Exercicio> getExercicios() {
+	public IRepositorioGenerico<Exercicio> getExercicios() {
 		return exercicios;
+	}
+
+	@Override
+	public String toString() {
+		return "\nTreino - tipo: " + tipo  + "\n" + exercicios.listar();
 	}
 }

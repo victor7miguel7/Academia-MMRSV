@@ -1,17 +1,16 @@
 package entidades;
 
-import java.time.Period;
+import java.time.Duration;
 
 public class Exercicio {
 	
 	private String nome;
 	private String tipo;
-	private Period intervalo;
+	private Duration intervalo;
 	private int qtdDeSeries;
 	private int qtdDeRepeticao;
-
 	
-	public Exercicio(String nome, String tipo, Period intervalo, int qtdDeSeries, int qtdDeRepeticao) {
+	public Exercicio(String nome, String tipo, Duration intervalo, int qtdDeSeries, int qtdDeRepeticao) {
 		super();
 		this.nome = nome;
 		this.tipo = tipo;
@@ -28,7 +27,7 @@ public class Exercicio {
 		return tipo;
 	}
 
-	public Period getIntervalo() {
+	public Duration getIntervalo() {
 		return intervalo;
 	}
 
@@ -38,6 +37,11 @@ public class Exercicio {
 	
 	public int getQtdDeRepeticao() {
 		return qtdDeRepeticao;
-		//testeee
 	}
+
+	@Override
+	public String toString() {
+		return "\nExercicio: " + nome + ", tipo: " + tipo + ", intervalo: " + String.format("%02d min", intervalo.getSeconds()/60)
+				+ ", séries: " + qtdDeSeries + ", repetições: " + qtdDeRepeticao;
+	}	
 }

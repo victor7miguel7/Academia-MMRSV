@@ -1,14 +1,12 @@
+import java.time.Duration;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Period;
 
 import entidades.Cliente;
 import entidades.Exercicio;
-import entidades.ImcMedido;
 import entidades.PersonalTrainer;
 import entidades.PlanoDeTreino;
 import entidades.Treino;
-import entidades.TreinoExecutado;
 import entidades.Usuario;
 import negocio.ControladorGenerico;
 
@@ -18,21 +16,20 @@ public class Principal {
 		
 		ControladorGenerico cg = new ControladorGenerico();	
 		
-		Usuario personal1 = new PersonalTrainer("23", "João", "joao@gmail.com", "123456", "34", LocalDate.of(2000, 5, 20));
+		Usuario personal1 = new PersonalTrainer("23", "Joï¿½o", "joao@gmail.com", "123456", "34", LocalDate.of(2000, 5, 20));
 		Usuario cliente1 = new Cliente("54", "Maria", "maria@gmail.com", "m12345", "F", LocalDate.of(1994, 7, 2), 80, 1.63);
-		Exercicio exer1 = new Exercicio("Supino Reto", "Peito", null , 4, 10);
-		Exercicio exer2 = new Exercicio("Puxada Aberta", "Costas", null, 4, 10);
-		Exercicio exer3 = new Exercicio("Tríceps Pulley", "Tríceps", null, 3, 12);
-		Exercicio exer4 = new Exercicio("Agachamento Livre", "Quadríceps/Glúteos", null, 4, 10);
-		Exercicio exer5 = new Exercicio("Extensora", "Quadríceps", null, 4, 10);
-		Exercicio exer6 = new Exercicio("Stiff", "Posterior", null, 3, 12);
-		Treino treino1 = new Treino("Superior");
-		Treino treino2 = new Treino("Inferior");
-		PlanoDeTreino planoTreino = new PlanoDeTreino(LocalDate.of(2022, 8, 20), null, (Cliente) cliente1);
-		TreinoExecutado treinoExe = new TreinoExecutado((Cliente) cliente1, treino1, null);
-		TreinoExecutado treinoExe2 = new TreinoExecutado((Cliente) cliente1, treino2, null);
-		ImcMedido imc = new ImcMedido(LocalDate.of(2022, 7, 4), (Cliente) cliente1);
 		
+		Treino treino1 = new Treino("Superior");
+		Treino treino2 = new Treino("Inferior");		
+		
+		Exercicio exer1 = new Exercicio("Supino Reto", "Peito", Duration.ofMinutes(10), 4, 10);
+		Exercicio exer2 = new Exercicio("Puxada Aberta", "Costas", Duration.ofMinutes(15), 4, 10);
+		Exercicio exer3 = new Exercicio("TrÃ­ceps Pulley", "TrÃ­ceps", Duration.ofMinutes(7), 3, 12);
+		Exercicio exer4 = new Exercicio("Agachamento Livre", "QuadrÃ­ceps/GlÃºteos", Duration.ofMinutes(10), 4, 10);
+		Exercicio exer5 = new Exercicio("Extensora", "QuadrÃ­ceps", Duration.ofMinutes(12), 4, 10);
+		Exercicio exer6 = new Exercicio("Stiff", "Posterior", Duration.ofMinutes(8), 3, 12);
+		
+		PlanoDeTreino planoTreino = new PlanoDeTreino(LocalDate.of(2022, 8, 20), Period.ofDays(45), (Cliente) cliente1);
 		
 		cg.getRepositorioDeExercicios().inserir(exer1);
 		cg.getRepositorioDeExercicios().inserir(exer2);
@@ -41,13 +38,23 @@ public class Principal {
 		cg.getRepositorioDeExercicios().inserir(exer5);
 		cg.getRepositorioDeExercicios().inserir(exer6);
 		
+		treino1.getExercicios().inserir(exer1);
+		treino1.getExercicios().inserir(exer4);
+		treino1.getExercicios().inserir(exer6);
+		
+		treino2.getExercicios().inserir(exer2);
+		treino2.getExercicios().inserir(exer3);
+		treino2.getExercicios().inserir(exer5);
+		
 		cg.getRepositorioDeTreinos().inserir(treino1);
+		cg.getRepositorioDeTreinos().inserir(treino2);
 		cg.getRepositorioDePlanoDetreinos().inserir(planoTreino);
 		
-
-		int frequencia = cg.consultarFrequenciaCliente((Cliente) cliente1 , LocalDate.of(2022, 8, 20), LocalDate.of(2022, 11, 20));
-		System.out.printf("A frequencia foi de %d dia no mês de Setembro\n", frequencia);
-			
+		for(int i=0; i<cg.getRepositorioDeTreinos().listar().size(); i++) {
+			System.out.println(cg.getRepositorioDeTreinos().listar().get(i).toString());
+		}
+		
+//		int frequencia = cg.consultarFrequenciaCliente((Cliente) cliente1 , LocalDate.of(2022, 8, 20), LocalDate.of(2022, 11, 20));
+//		System.out.printf("A frequencia foi de %d dia no mes de Setembro\n", frequencia);			
 	}
-
 }
