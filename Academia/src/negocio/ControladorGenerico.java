@@ -32,10 +32,10 @@ public class ControladorGenerico {
 		return PlanoDetreinos;
 	}
 	
-	consultarFrequeciaCliente(Cliente c, Data inicio, Data fim) {
-		lista = repositorioTreinoExecutado.listar(c);
-		filtrar por data
-		return lista.size();
-	}
+//	consultarFrequeciaCliente(Cliente c, Data inicio, Data fim) {
+//		lista = repositorioTreinoExecutado.listar(c);
+//		filtrar por data
+//		return lista.size();
+//	}
 	
 }

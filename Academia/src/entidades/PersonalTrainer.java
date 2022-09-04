@@ -3,18 +3,16 @@ package entidades;
 import java.time.LocalDate;
 
 public class PersonalTrainer extends Usuario{
-	
-	cref
 
-	private String id;
-	
-	public PersonalTrainer(String nome, String email, String senha, LocalDate dtNascimento, String id) {
-		super(nome, email, senha, dtNascimento);
-		this.id = id;
+	private String cref;
+
+	public PersonalTrainer(String id, String cref, String nome, String email, String senha, LocalDate dtNascimento) {
+		super(id, nome, email, senha, dtNascimento);
+		this.cref = cref;
 	}
 
-	public String getId() {
-		return id;
+	public String getCref() {
+		return cref;
 	}
 	
 }

@@ -2,14 +2,16 @@ package entidades;
 
 import java.time.LocalDate;
 
-public class Usuario {
-	id
-	String nome;
-	String email;
-	String senha;
-	LocalDate dtNascimento;
+public abstract class Usuario {
 	
-	public Usuario(String nome, String email, String senha, LocalDate dtNascimento) {
+	private String id;
+	private String nome;
+	private String email;
+	private String senha;
+	private LocalDate dtNascimento;
+	
+	public Usuario(String id, String nome, String email, String senha, LocalDate dtNascimento) {
+		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
@@ -35,9 +37,9 @@ public class Usuario {
 	public LocalDate getDtNascimento() {
 		return dtNascimento;
 	}
-	
-	public void cadastrarLogin (String Login, String senha) {
-		
+
+	public String getId() {
+		return id;
 	}
 
 }

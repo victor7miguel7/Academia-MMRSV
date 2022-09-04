@@ -3,7 +3,7 @@ package entidades;
 import java.util.List;
 
 public class Treino {
-	
+	// Alteração
 	private List<Exercicio> e1;
 	
 	public Treino(Exercicio e1, Exercicio e2, Exercicio e3) {

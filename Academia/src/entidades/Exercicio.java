@@ -2,6 +2,7 @@ package entidades;
 
 public class Exercicio {
 	
+	// Alteração
 	private String nome;
 	private String tipo;
 	

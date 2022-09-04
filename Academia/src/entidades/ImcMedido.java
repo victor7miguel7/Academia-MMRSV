@@ -10,12 +10,10 @@ public class ImcMedido {
 	private Cliente cliente;
 	private double medidaImc;
 
-	public Imc(LocalDate data, Cliente cliente) {
+	public ImcMedido(LocalDate data, Cliente cliente) {
 		this.data = data;
 		this.cliente = cliente;
-		this.listaImc = new ArrayList<>();
-//		cliente.setImc(calcularImc());
-//		atualizarImc();
+
 	}
 
 	public LocalDate getData() {
@@ -26,9 +24,6 @@ public class ImcMedido {
 		return cliente;
 	}
 
-	public List<Double> getlistaImc() {
-		return listaImc;
-	}
 
 	public static double calcularImcAux(cliente) {
 		double peso = cliente.getPeso();

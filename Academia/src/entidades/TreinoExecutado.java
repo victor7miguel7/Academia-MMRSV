@@ -6,19 +6,35 @@ import java.util.List;
 
 public class TreinoExecutado {
 
-	
-	cliente
-	treino
-	data
+	// Atualização
+	private Cliente cliente;
+	private Treino treino;
+	private LocalDate data;
 	
 	private ArrayList<TreinoExecutado> executados;
 	
 	//Construtor
-	public TreinosExecutados() {
-		executados = new ArrayList<>();
+	public TreinoExecutado(Cliente cliente, Treino treino, LocalDate data, ArrayList<TreinoExecutado> executados) {
+		this.cliente = cliente;
+		this.treino = treino;
+		this.data = data;
+		this.executados = executados;
 	}
+	
 	// Gets
-	public ArrayList<LocalDate> getExecutados() {
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public Treino getTreino() {
+		return treino;
+	}
+
+	public LocalDate getData() {
+		return data;
+	}
+
+	public ArrayList<TreinoExecutado> getExecutados() {
 		return executados;
 	}
 	
@@ -32,7 +48,7 @@ public class TreinoExecutado {
         }
 		return frequencia;		
 	}
-	
+
 	public void executarTreino() {
 		LocalDate hoje = LocalDate.now();
 		executados.add(hoje);

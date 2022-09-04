@@ -10,9 +10,9 @@ public class Cliente extends Usuario {
 	private double altura;
 	private double imc;
 
-	public Cliente(String nome, String email, String senha, LocalDate dtNascimento, String genero, double peso,
-			double altura) {
-		super(nome, email, senha, dtNascimento);
+	public Cliente(String id, String nome, String genero, String email, String senha, LocalDate dtNascimento,
+			double peso, double altura) {
+		super(id, nome, email, senha, dtNascimento);
 		this.genero = genero;
 		this.peso = peso;
 		this.altura = altura;
@@ -26,25 +26,20 @@ public class Cliente extends Usuario {
 		this.peso = peso;
 	}
 
-	public double getAltura() {
-		return altura;
-	}
-
-	public void setAltura(double altura) {
-		this.altura = altura;
-	}
-
-
-	public String getGenero() {
-		return genero;
-	}
-
 	public double getImc() {
 		return imc;
 	}
 
 	public void setImc(double imc) {
 		this.imc = imc;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public double getAltura() {
+		return altura;
 	}
 
 	public int calcularIdade(LocalDate dtNascimento) {
@@ -56,5 +51,5 @@ public class Cliente extends Usuario {
 	public String toString() {
 		return "Imc " + imc;
 	}
-	
+
 }
