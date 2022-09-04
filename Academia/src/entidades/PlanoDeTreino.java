@@ -39,7 +39,7 @@ public class PlanoDeTreino {
 	}
 
 	public String toString() {
-		return "PlanoDeTreino de " + cliente + "\nData de Inicio:" + dataInicio.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + 
+		return "\nPlanoDeTreino de " + cliente + "\nData de Inicio:" + dataInicio.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + 
 				"\nDuracao: " + duracao  + treinos.listar();
 	}
 
