@@ -18,39 +18,36 @@ public class Principal {
 		
 		ControladorGenerico cg = new ControladorGenerico();	
 		
-		Usuario p = new PersonalTrainer("23", "JoÃ£o", "joao@gmail.com", "123456", "34", LocalDate.of(2000, 5, 20));
-		Usuario c = new Cliente("54", "Maria", "maria@gmail.com", "m12345", "F", LocalDate.of(1994, 7, 2), 80, 1.63);
-		Exercicio e1 = new Exercicio("Costas", "A", null, 0);
-		Exercicio e2 = new Exercicio("Pernas", "B", null, 0);
-		Exercicio e3 = new Exercicio("BraÃ§os", "C", null, 0);
-		Treino t = new Treino();
-		PlanoDeTreino pt = new PlanoDeTreino(LocalDate.of(2022, 8, 20), "2h", (Cliente) c, t);
-		TreinoExecutado te = new TreinoExecutado(null, t, null, null);
-		ImcMedido i = new ImcMedido(LocalDate.of(2022, 7, 4), (Cliente) c);
+		Usuario personal1 = new PersonalTrainer("23", "João", "joao@gmail.com", "123456", "34", LocalDate.of(2000, 5, 20));
+		Usuario cliente1 = new Cliente("54", "Maria", "maria@gmail.com", "m12345", "F", LocalDate.of(1994, 7, 2), 80, 1.63);
+		Exercicio exer1 = new Exercicio("Supino Reto", "Peito", null , 4, 10);
+		Exercicio exer2 = new Exercicio("Puxada Aberta", "Costas", null, 4, 10);
+		Exercicio exer3 = new Exercicio("Tríceps Pulley", "Tríceps", null, 3, 12);
+		Exercicio exer4 = new Exercicio("Agachamento Livre", "Quadríceps/Glúteos", null, 4, 10);
+		Exercicio exer5 = new Exercicio("Extensora", "Quadríceps", null, 4, 10);
+		Exercicio exer6 = new Exercicio("Stiff", "Posterior", null, 3, 12);
+		Treino treino1 = new Treino("Superior");
+		Treino treino2 = new Treino("Inferior");
+		PlanoDeTreino planoTreino = new PlanoDeTreino(LocalDate.of(2022, 8, 20), null, (Cliente) cliente1);
+		TreinoExecutado treinoExe = new TreinoExecutado((Cliente) cliente1, treino1, null);
+		TreinoExecutado treinoExe2 = new TreinoExecutado((Cliente) cliente1, treino2, null);
+		ImcMedido imc = new ImcMedido(LocalDate.of(2022, 7, 4), (Cliente) cliente1);
 		
 		
-		cg.getRepositorioDeExercicios().inserir(e1);
-		cg.getRepositorioDeExercicios().inserir(e2);
-		cg.getRepositorioDeExercicios().inserir(e3);
+		cg.getRepositorioDeExercicios().inserir(exer1);
+		cg.getRepositorioDeExercicios().inserir(exer2);
+		cg.getRepositorioDeExercicios().inserir(exer3);
+		cg.getRepositorioDeExercicios().inserir(exer4);
+		cg.getRepositorioDeExercicios().inserir(exer5);
+		cg.getRepositorioDeExercicios().inserir(exer6);
 		
-		cg.getRepositorioDeTreinos().inserir(t);
-		cg.getRepositorioDePlanoDetreinos().inserir(pt);
+		cg.getRepositorioDeTreinos().inserir(treino1);
+		cg.getRepositorioDePlanoDetreinos().inserir(planoTreino);
 		
-		te.executarTreino();
-		
-		i.atualizarImc();
-		((Cliente) c).setPeso(70);
-		i.atualizarImc();
-		((Cliente) c).setPeso(80);
-		i.atualizarImc();
-		
-		int frequencia = te.consultarFrequenciaNoMÃªs(9);
-		System.out.printf("A frequencia foi de %d dia no mÃªs de Setembro\n", frequencia);
-		
-		List<Double> imc;
-		for (int a = 0; a<imc.size(); a++) {
-			System.out.println(imc.get(a).toString());
-		}
+
+		int frequencia = cg.consultarFrequenciaCliente((Cliente) cliente1 , LocalDate.of(2022, 8, 20), LocalDate.of(2022, 11, 20));
+		System.out.printf("A frequencia foi de %d dia no mês de Setembro\n", frequencia);
+			
 	}
 
 }

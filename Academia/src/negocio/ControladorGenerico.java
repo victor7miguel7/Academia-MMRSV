@@ -64,7 +64,7 @@ public class ControladorGenerico {
 		return RepositorioDePersonalTrainers;
 	}
 
-	public int consultarFrequeciaCliente(Cliente c, LocalDate inicio, LocalDate fim) {
+	public int consultarFrequenciaCliente(Cliente c, LocalDate inicio, LocalDate fim) {
 		List<TreinoExecutado> lista = RepositorioDeTreinosExecutados.listar();
 		int frequencia = 0;
 		for(int i = 0; i < lista.size(); i++) {			
