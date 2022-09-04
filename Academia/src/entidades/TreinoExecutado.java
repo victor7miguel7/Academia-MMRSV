@@ -3,20 +3,21 @@ package entidades;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import dados.IRepositorioGenerico;
+import dados.RepositorioGenerico;
+
 public class TreinoExecutado {
 
 	private Cliente cliente;
 	private Treino treino;
-	private LocalDate data;
-	
-	private ArrayList<TreinoExecutado> executados;
+	private LocalDate data;	
+
 	
 	//Construtor
 	public TreinoExecutado(Cliente cliente, Treino treino, LocalDate data) {
 		this.cliente = cliente;
 		this.treino = treino;
 		this.data = data;
-		this.executados = new ArrayList<>();
 	}
 	
 	// Gets
@@ -32,7 +33,12 @@ public class TreinoExecutado {
 		return data;
 	}
 
-	public ArrayList<TreinoExecutado> getExecutados() {
-		return executados;
+
+	@Override
+	public String toString() {
+		return "\nTreino Executado de " + cliente  + treino + "\ndata: " + data ;
 	}
+	
+	 
+	
 }
