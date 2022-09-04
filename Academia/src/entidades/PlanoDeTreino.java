@@ -1,17 +1,18 @@
 package entidades;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class PlanoDeTreino {
 	
 	private LocalDate dataInicio;
-	private String duracao;
+	private Period duracao;
 	private Cliente cliente;
 	private List<Treino> treinos; // Alteração
 
-	public PlanoDeTreino(LocalDate dataInicio, String duracao, Cliente cliente, List<Treino> treinos) {
+	public PlanoDeTreino(LocalDate dataInicio, Period duracao, Cliente cliente, List<Treino> treinos) {
 		this.dataInicio = dataInicio;
 		this.duracao = duracao;
 		this.cliente = cliente;
@@ -22,7 +23,7 @@ public class PlanoDeTreino {
 		return dataInicio;
 	}
 
-	public String getDuracao() {
+	public Period getDuracao() {
 		return duracao;
 	}
 

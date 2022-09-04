@@ -13,7 +13,6 @@ public class ImcMedido {
 	public ImcMedido(LocalDate data, Cliente cliente) {
 		this.data = data;
 		this.cliente = cliente;
-
 	}
 
 	public LocalDate getData() {
@@ -24,8 +23,11 @@ public class ImcMedido {
 		return cliente;
 	}
 
+	public double getMedidaImc() {
+		return medidaImc;
+	}
 
-	public static double calcularImcAux(cliente) {
+	public static double calcularImcAux(Cliente cliente) {
 		double peso = cliente.getPeso();
 		double altura = cliente.getAltura();
 		double imc = peso / (altura * altura);

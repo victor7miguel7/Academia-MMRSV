@@ -3,10 +3,11 @@ package entidades;
 import java.util.List;
 
 public class Treino {
-	// Alteração
-	private List<Exercicio> e1;
 	
-	public Treino(Exercicio e1, Exercicio e2, Exercicio e3) {
+	// Alteração
+	private List<Exercicio> exercicios;
+	
+	public Treino() {
 		this.e1 = e1;
 		this.e2 = e2;
 		this.e3 = e3;

@@ -4,32 +4,45 @@ import dados.IRepositorioGenerico;
 import entidades.Exercicio;
 import entidades.PlanoDeTreino;
 import entidades.Treino;
+import entidades.Usuario;
 import dados.RepositorioGenerico;
 
 public class ControladorGenerico {
 	
-	singleton
-	
-	private IRepositorioGenerico<Exercicio> exercicios;
-	private IRepositorioGenerico<Treino> treinos;
-	private IRepositorioGenerico<PlanoDeTreino> PlanoDetreinos;
+	private IRepositorioGenerico<Exercicio> RepositorioDeExercicios;
+	private IRepositorioGenerico<Treino> RepositorioDeTreinos;
+	private IRepositorioGenerico<PlanoDeTreino> RepositorioDePlanoDetreinos;
+	private IRepositorioGenerico<Usuario> RepositorioDeUsuarios;
+	private static ControladorGenerico instance;
 	
 	public ControladorGenerico() {
-		this.exercicios = new RepositorioGenerico<>();
-		this.treinos = new RepositorioGenerico<>();
-		this.PlanoDetreinos = new RepositorioGenerico<>();
+		this.RepositorioDeExercicios = new RepositorioGenerico<>();
+		this.RepositorioDeTreinos = new RepositorioGenerico<>();
+		this.RepositorioDePlanoDetreinos = new RepositorioGenerico<>();
+		this.RepositorioDeUsuarios = new RepositorioGenerico<>();
+	}
+	
+	public static ControladorGenerico getInstance() {
+        if (instance == null) {
+            instance = new ControladorGenerico();
+        }
+        return instance;
+    }
+
+	public IRepositorioGenerico<Exercicio> getRepositorioDeExercicios() {
+		return RepositorioDeExercicios;
 	}
 
-	public IRepositorioGenerico<Exercicio> getExercicios() {
-		return exercicios;
+	public IRepositorioGenerico<Treino> getRepositorioDeTreinos() {
+		return RepositorioDeTreinos;
 	}
 
-	public IRepositorioGenerico<Treino> getTreinos() {
-		return treinos;
+	public IRepositorioGenerico<PlanoDeTreino> getRepositorioDePlanoDetreinos() {
+		return RepositorioDePlanoDetreinos;
 	}
 
-	public IRepositorioGenerico<PlanoDeTreino> getPlanoDetreinos() {
-		return PlanoDetreinos;
+	public IRepositorioGenerico<Usuario> getRepositorioDeUsuarios() {
+		return RepositorioDeUsuarios;
 	}
 	
 //	consultarFrequeciaCliente(Cliente c, Data inicio, Data fim) {

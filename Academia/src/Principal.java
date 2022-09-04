@@ -4,11 +4,11 @@ import java.util.List;
 
 import entidades.Cliente;
 import entidades.Exercicio;
-import entidades.Imc;
+import entidades.ImcMedido;
 import entidades.PersonalTrainer;
 import entidades.PlanoDeTreino;
 import entidades.Treino;
-import entidades.TreinosExecutados;
+import entidades.TreinoExecutado;
 import entidades.Usuario;
 import negocio.ControladorGenerico;
 
@@ -25,8 +25,8 @@ public class Principal {
 		Exercicio e3 = new Exercicio("Braços", "C");
 		Treino t = new Treino(e1, e2, e3);
 		PlanoDeTreino pt = new PlanoDeTreino(LocalDate.of(2022, 8, 20), "2h", (Cliente) c, t);
-		TreinosExecutados te = new TreinosExecutados();
-		Imc i = new Imc(LocalDate.of(2022, 7, 4), (Cliente) c);
+		TreinoExecutado te = new TreinoExecutado();
+		ImcMedido i = new ImcMedido(LocalDate.of(2022, 7, 4), (Cliente) c);
 		
 		
 		cg.getExercicios().inserir(e1);
