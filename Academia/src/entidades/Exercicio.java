@@ -4,17 +4,20 @@ import java.time.Period;
 
 public class Exercicio {
 	
-	// Alteração
 	private String nome;
 	private String tipo;
 	private Period intervalo;
 	private int qtdDeSeries;
+	private int qtdDeRepeticao;
 
-	public Exercicio(String nome, String tipo, Period intervalo, int qtdDeSeries) {
+	
+	public Exercicio(String nome, String tipo, Period intervalo, int qtdDeSeries, int qtdDeRepeticao) {
+		super();
 		this.nome = nome;
 		this.tipo = tipo;
 		this.intervalo = intervalo;
 		this.qtdDeSeries = qtdDeSeries;
+		this.qtdDeRepeticao = qtdDeRepeticao;
 	}
 
 	public String getNome() {
@@ -32,5 +35,9 @@ public class Exercicio {
 	public int getQtdDeSeries() {
 		return qtdDeSeries;
 	}
-
+	
+	public int getQtdDeRepeticao() {
+		return qtdDeRepeticao;
+		
+	}
 }

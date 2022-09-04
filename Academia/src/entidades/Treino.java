@@ -1,28 +1,18 @@
 package entidades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Treino {
 	
-	// Alteração
 	private List<Exercicio> exercicios;
-	
-	public Treino() {
-		this.e1 = e1;
-		this.e2 = e2;
-		this.e3 = e3;
+
+	public Treino(List<Exercicio> exercicios) {
+		super();
+		this.exercicios = new ArrayList<>();
 	}
 
-	public Exercicio getE1() {
-		return e1;
-	}
-
-	public Exercicio getE2() {
-		return e2;
-	}
-
-	public Exercicio getE3() {
-		return e3;
-	}
-
+	public List<Exercicio> getExercicios() {
+		return exercicios;
+	}	
 }
