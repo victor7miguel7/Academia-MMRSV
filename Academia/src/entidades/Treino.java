@@ -23,6 +23,6 @@ public class Treino {
 
 	@Override
 	public String toString() {
-		return "\nTreino - tipo: " + tipo  + "\n" + exercicios.listar();
+		return "\n\nTreino " + tipo  + "\n" + exercicios.listar();
 	}
 }

@@ -46,12 +46,21 @@ public class Principal {
 		treino2.getExercicios().inserir(exer3);
 		treino2.getExercicios().inserir(exer5);
 		
+		planoTreino.getTreinos().inserir(treino1);
+		planoTreino.getTreinos().inserir(treino2);
+		
 		cg.getRepositorioDeTreinos().inserir(treino1);
 		cg.getRepositorioDeTreinos().inserir(treino2);
 		cg.getRepositorioDePlanoDetreinos().inserir(planoTreino);
 		
+		
+		
 		for(int i=0; i<cg.getRepositorioDeTreinos().listar().size(); i++) {
 			System.out.println(cg.getRepositorioDeTreinos().listar().get(i).toString());
+		}
+		
+		for(int i=0; i<cg.getRepositorioDePlanoDetreinos().listar().size(); i++) {
+			System.out.println(cg.getRepositorioDePlanoDetreinos().listar().get(i).toString());
 		}
 		
 //		int frequencia = cg.consultarFrequenciaCliente((Cliente) cliente1 , LocalDate.of(2022, 8, 20), LocalDate.of(2022, 11, 20));
