@@ -18,23 +18,23 @@ public class Principal {
 		
 		ControladorGenerico cg = new ControladorGenerico();	
 		
-		Usuario p = new PersonalTrainer("João", "joao@gmail.com", "123456", LocalDate.of(2000, 5, 20), "34");
-		Usuario c = new Cliente("Maria", "maria@gmail.com", "m12345", LocalDate.of(1994, 7, 2), "F", 80, 1.63);
-		Exercicio e1 = new Exercicio("Costas", "A");
-		Exercicio e2 = new Exercicio("Pernas", "B");
-		Exercicio e3 = new Exercicio("Braços", "C");
-		Treino t = new Treino(e1, e2, e3);
+		Usuario p = new PersonalTrainer("23", "João", "joao@gmail.com", "123456", "34", LocalDate.of(2000, 5, 20));
+		Usuario c = new Cliente("54", "Maria", "maria@gmail.com", "m12345", "F", LocalDate.of(1994, 7, 2), 80, 1.63);
+		Exercicio e1 = new Exercicio("Costas", "A", null, 0);
+		Exercicio e2 = new Exercicio("Pernas", "B", null, 0);
+		Exercicio e3 = new Exercicio("Braços", "C", null, 0);
+		Treino t = new Treino();
 		PlanoDeTreino pt = new PlanoDeTreino(LocalDate.of(2022, 8, 20), "2h", (Cliente) c, t);
-		TreinoExecutado te = new TreinoExecutado();
+		TreinoExecutado te = new TreinoExecutado(null, t, null, null);
 		ImcMedido i = new ImcMedido(LocalDate.of(2022, 7, 4), (Cliente) c);
 		
 		
-		cg.getExercicios().inserir(e1);
-		cg.getExercicios().inserir(e2);
-		cg.getExercicios().inserir(e3);
+		cg.getRepositorioDeExercicios().inserir(e1);
+		cg.getRepositorioDeExercicios().inserir(e2);
+		cg.getRepositorioDeExercicios().inserir(e3);
 		
-		cg.getTreinos().inserir(t);
-		cg.getPlanoDetreinos().inserir(pt);
+		cg.getRepositorioDeTreinos().inserir(t);
+		cg.getRepositorioDePlanoDetreinos().inserir(pt);
 		
 		te.executarTreino();
 		
@@ -47,7 +47,7 @@ public class Principal {
 		int frequencia = te.consultarFrequenciaNoMês(9);
 		System.out.printf("A frequencia foi de %d dia no mês de Setembro\n", frequencia);
 		
-		List<Double> imc = i.getlistaImc();
+		List<Double> imc;
 		for (int a = 0; a<imc.size(); a++) {
 			System.out.println(imc.get(a).toString());
 		}
