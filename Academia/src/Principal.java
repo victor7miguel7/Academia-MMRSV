@@ -39,12 +39,12 @@ public class Principal {
 		cg.getRepositorioDeExercicios().inserir(exer6);
 		
 		treino1.getExercicios().inserir(exer1);
-		treino1.getExercicios().inserir(exer4);
-		treino1.getExercicios().inserir(exer6);
+		treino1.getExercicios().inserir(exer2);
+		treino1.getExercicios().inserir(exer3);
 		
-		treino2.getExercicios().inserir(exer2);
-		treino2.getExercicios().inserir(exer3);
+		treino2.getExercicios().inserir(exer4);
 		treino2.getExercicios().inserir(exer5);
+		treino2.getExercicios().inserir(exer6);
 		
 		planoTreino.getTreinos().inserir(treino1);
 		planoTreino.getTreinos().inserir(treino2);
