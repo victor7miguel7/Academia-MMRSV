@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dados.IRepositorioGenerico;
-import entidades.Cliente;
-import entidades.Exercicio;
-import entidades.PersonalTrainer;
-import entidades.PlanoDeTreino;
-import entidades.Treino;
-import entidades.TreinoExecutado;
-import entidades.Usuario;
 import dados.RepositorioGenerico;
+import models.Cliente;
+import models.Exercicio;
+import models.PersonalTrainer;
+import models.PlanoDeTreino;
+import models.Treino;
+import models.TreinoExecutado;
+import models.Usuario;
 
 public class ControladorGenerico {
 
@@ -24,13 +24,13 @@ public class ControladorGenerico {
 	private IRepositorioGenerico<PersonalTrainer> RepositorioDePersonalTrainers;
 	private static ControladorGenerico instance;
 
-	public ControladorGenerico() {
-		this.RepositorioDeExercicios = new RepositorioGenerico<>();
-		this.RepositorioDeTreinos = new RepositorioGenerico<>();
-		this.RepositorioDePlanoDetreinos = new RepositorioGenerico<>();
-		this.RepositorioDeUsuarios = new RepositorioGenerico<>();
-		this.RepositorioDeTreinosExecutados = new RepositorioGenerico<>();
-		this.RepositorioDePersonalTrainers = new RepositorioGenerico<>();
+	private ControladorGenerico() {
+		this.RepositorioDeExercicios = new RepositorioGenerico<>("exercicios.dat");
+		this.RepositorioDeTreinos = new RepositorioGenerico<>("Treinos.dat");
+		this.RepositorioDePlanoDetreinos = new RepositorioGenerico<>("planoDeTreinos.dat");
+		this.RepositorioDeUsuarios = new RepositorioGenerico<>("usuarios.dat");
+		this.RepositorioDeTreinosExecutados = new RepositorioGenerico<>("treinosExecutados.dat");
+		this.RepositorioDePersonalTrainers = new RepositorioGenerico<>("personalTrainers.dat");
 	}
 
 	public static ControladorGenerico getInstance() {

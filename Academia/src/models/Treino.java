@@ -1,4 +1,4 @@
-package entidades;
+package models;
 
 import dados.IRepositorioGenerico;
 import dados.RepositorioGenerico;
@@ -10,7 +10,7 @@ public class Treino {
 
 	public Treino(String tipo) {
 		this.tipo = tipo;
-		this.exercicios = new RepositorioGenerico<>();
+		this.exercicios = new RepositorioGenerico<>("treino.dat");
 	}
 
 	public String getTipo() {

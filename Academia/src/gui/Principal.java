@@ -1,22 +1,24 @@
+package gui;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
-import entidades.Cliente;
-import entidades.Exercicio;
-import entidades.PersonalTrainer;
-import entidades.PlanoDeTreino;
-import entidades.Treino;
-import entidades.TreinoExecutado;
-import entidades.Usuario;
+import exception.ElementoJaExisteException;
+import models.Cliente;
+import models.Exercicio;
+import models.PersonalTrainer;
+import models.PlanoDeTreino;
+import models.Treino;
+import models.TreinoExecutado;
+import models.Usuario;
 import negocio.ControladorGenerico;
 
 public class Principal {
 
 	public static void main(String[] args) {
 
-		ControladorGenerico cg = new ControladorGenerico();
+		ControladorGenerico cg = ControladorGenerico.getInstance();
 
 		Usuario personal1 = new PersonalTrainer("23", "Jo�o", "joao@gmail.com", "123456", "34",
 				LocalDate.of(2000, 5, 20));
@@ -49,6 +51,7 @@ public class Principal {
 		TreinoExecutado treinoExe3 = new TreinoExecutado((Cliente) cliente3, treino2, LocalDate.of(2022, 8, 22));
 		TreinoExecutado treinoExe4 = new TreinoExecutado((Cliente) cliente3, treino1, LocalDate.of(2022, 8, 22));
 
+		try {
 		cg.getRepositorioDeExercicios().inserir(exer1);
 		cg.getRepositorioDeExercicios().inserir(exer2);
 		cg.getRepositorioDeExercicios().inserir(exer3);
@@ -80,6 +83,11 @@ public class Principal {
 		cg.getRepositorioDeTreinosExecutados().inserir(treinoExe2);
 		cg.getRepositorioDeTreinosExecutados().inserir(treinoExe3);
 		cg.getRepositorioDeTreinosExecutados().inserir(treinoExe4);
+		
+		} catch (ElementoJaExisteException jaExiste) {
+            System.out.println("Elemento já existente");
+            jaExiste.printStackTrace();
+        }
 
 		System.out.println("LISTA DE TREINOS");
 		System.out.println(cg.getRepositorioDeTreinos().listar());

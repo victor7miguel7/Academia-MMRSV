@@ -1,4 +1,4 @@
-package entidades;
+package models;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -17,7 +17,7 @@ public class PlanoDeTreino {
 		this.dataInicio = dataInicio;
 		this.duracao = duracao;
 		this.cliente = cliente;
-		this.treinos = new RepositorioGenerico<>();
+		this.treinos = new RepositorioGenerico<>("planoDeTreino.dat");
 	}
 
 	public LocalDate getDataInicio() {
