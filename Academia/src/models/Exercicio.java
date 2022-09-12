@@ -1,8 +1,11 @@
 package models;
 
+import java.io.Serializable;
 import java.time.Duration;
 
-public class Exercicio {
+public class Exercicio implements Serializable{
+
+	private static final long serialVersionUID = -3996100207426183192L;
 	
 	private String nome;
 	private String tipo;

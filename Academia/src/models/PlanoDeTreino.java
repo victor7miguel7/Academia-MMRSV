@@ -1,4 +1,6 @@
 package models;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -6,7 +8,9 @@ import java.time.format.DateTimeFormatter;
 import dados.IRepositorioGenerico;
 import dados.RepositorioGenerico;
 
-public class PlanoDeTreino {
+public class PlanoDeTreino implements Serializable{
+
+	private static final long serialVersionUID = 4967484128939616324L;
 	
 	private LocalDate dataInicio;
 	private Period duracao;
@@ -17,7 +21,7 @@ public class PlanoDeTreino {
 		this.dataInicio = dataInicio;
 		this.duracao = duracao;
 		this.cliente = cliente;
-		this.treinos = new RepositorioGenerico<>("planoDeTreino.dat");
+		this.treinos = new RepositorioGenerico<>("planoDeTreinos.dat");
 	}
 
 	public LocalDate getDataInicio() {

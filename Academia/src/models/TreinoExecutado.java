@@ -1,13 +1,12 @@
 package models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
-import dados.IRepositorioGenerico;
-import dados.RepositorioGenerico;
+public class TreinoExecutado implements Serializable{
 
-public class TreinoExecutado {
-
+	private static final long serialVersionUID = -148489282775667740L;
+	
 	private Cliente cliente;
 	private Treino treino;
 	private LocalDate data;	

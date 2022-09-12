@@ -27,6 +27,7 @@ public class RepositorioFileUtil {
             if (ois != null) {
                 try {
                     ois.close();
+                    fis.close();
                 } catch (IOException e) {
                 }
             }
@@ -35,24 +36,38 @@ public class RepositorioFileUtil {
         return instanciaLocal;
     }
 
-    public static void salvarArquivo(Object instance, String filename) {
-        if (instance == null) {
-            return;
-        }
+    public static boolean salvarArquivo(Object obj, String filename) {
+//        if (obj == null) {
+//            return false;
+//        }
         File out = new File(filename);
+        if(!out.exists()) {
+        	try {
+				out.createNewFile();
+			} catch (Exception e) {
+				System.out.println("Não foi possível criar o arquivo");
+				e.printStackTrace();
+				return false;
+			}
+        }
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
-
         try {
             fos = new FileOutputStream(out);
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(instance);
+            oos.writeObject(obj);
+            oos.flush();
+            fos.flush();
+            
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         } finally {
             if (oos != null) {
                 try {
                     oos.close();
+                    fos.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

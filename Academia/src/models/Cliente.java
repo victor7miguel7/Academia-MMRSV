@@ -1,10 +1,13 @@
 package models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements Serializable{
 
+	private static final long serialVersionUID = 4864028013205862834L;
+	
 	private String genero;
 	private double peso;
 	private double altura;

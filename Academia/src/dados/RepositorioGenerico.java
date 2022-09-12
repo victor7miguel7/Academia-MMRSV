@@ -1,5 +1,6 @@
 package dados;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,7 +8,9 @@ import java.util.List;
 import exception.ElementoJaExisteException;
 import exception.ElementoNaoExisteException;
 
-public class RepositorioGenerico<R> implements IRepositorioGenerico<R> {
+public class RepositorioGenerico<R> implements IRepositorioGenerico<R> , Serializable{
+
+	private static final long serialVersionUID = -1362294104749530338L;
 
 	protected List<R> elementos;
 

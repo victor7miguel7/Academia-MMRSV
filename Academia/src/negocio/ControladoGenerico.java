@@ -8,34 +8,32 @@ import dados.IRepositorioGenerico;
 import dados.RepositorioGenerico;
 import models.Cliente;
 import models.Exercicio;
-import models.PersonalTrainer;
 import models.PlanoDeTreino;
 import models.Treino;
 import models.TreinoExecutado;
 import models.Usuario;
 
-public class ControladorGenerico {
+public class ControladoGenerico {
 
 	private IRepositorioGenerico<Exercicio> RepositorioDeExercicios;
 	private IRepositorioGenerico<Treino> RepositorioDeTreinos;
-	private IRepositorioGenerico<PlanoDeTreino> RepositorioDePlanoDetreinos;
+	private IRepositorioGenerico<PlanoDeTreino> RepositorioDePlanoDeTreinos;
 	private IRepositorioGenerico<Usuario> RepositorioDeUsuarios;
 	private IRepositorioGenerico<TreinoExecutado> RepositorioDeTreinosExecutados;
-	private IRepositorioGenerico<PersonalTrainer> RepositorioDePersonalTrainers;
-	private static ControladorGenerico instance;
+	
+	private static ControladoGenerico instance;
 
-	private ControladorGenerico() {
+	private ControladoGenerico() {
 		this.RepositorioDeExercicios = new RepositorioGenerico<>("exercicios.dat");
-		this.RepositorioDeTreinos = new RepositorioGenerico<>("Treinos.dat");
-		this.RepositorioDePlanoDetreinos = new RepositorioGenerico<>("planoDeTreinos.dat");
+		this.RepositorioDeTreinos = new RepositorioGenerico<>("treinos.dat");
+		this.RepositorioDePlanoDeTreinos = new RepositorioGenerico<>("planoDeTreinos.dat");
 		this.RepositorioDeUsuarios = new RepositorioGenerico<>("usuarios.dat");
 		this.RepositorioDeTreinosExecutados = new RepositorioGenerico<>("treinosExecutados.dat");
-		this.RepositorioDePersonalTrainers = new RepositorioGenerico<>("personalTrainers.dat");
 	}
 
-	public static ControladorGenerico getInstance() {
+	public static ControladoGenerico getInstance() {
 		if (instance == null) {
-			instance = new ControladorGenerico();
+			instance = new ControladoGenerico();
 		}
 		return instance;
 	}
@@ -48,8 +46,8 @@ public class ControladorGenerico {
 		return RepositorioDeTreinos;
 	}
 
-	public IRepositorioGenerico<PlanoDeTreino> getRepositorioDePlanoDetreinos() {
-		return RepositorioDePlanoDetreinos;
+	public IRepositorioGenerico<PlanoDeTreino> getRepositorioDePlanoDeTreinos() {
+		return RepositorioDePlanoDeTreinos;
 	}
 
 	public IRepositorioGenerico<Usuario> getRepositorioDeUsuarios() {
@@ -58,10 +56,6 @@ public class ControladorGenerico {
 
 	public IRepositorioGenerico<TreinoExecutado> getRepositorioDeTreinosExecutados() {
 		return RepositorioDeTreinosExecutados;
-	}
-
-	public IRepositorioGenerico<PersonalTrainer> getRepositorioDePersonalTrainers() {
-		return RepositorioDePersonalTrainers;
 	}
 
 	public int consultarFrequenciaCliente(Cliente c, LocalDate inicio, LocalDate fim) {
@@ -85,5 +79,9 @@ public class ControladorGenerico {
 			}
 		}
 		return novaLista;
+	}
+
+	public List<Exercicio> getExerciciosListar() {
+		return this.RepositorioDeExercicios.listar();
 	}
 }

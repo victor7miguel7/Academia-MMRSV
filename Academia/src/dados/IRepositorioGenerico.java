@@ -7,7 +7,7 @@ import exception.ElementoNaoExisteException;
 
 public interface IRepositorioGenerico<R> {
 
-void inserir(R obj) throws ElementoJaExisteException;
+	void inserir(R obj) throws ElementoJaExisteException;
     
     List<R> listar();
     
