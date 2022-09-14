@@ -4,17 +4,14 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
-import dados.RepositorioFileUtil;
 import exception.ElementoJaExisteException;
 import models.Cliente;
 import models.Exercicio;
 import models.PersonalTrainer;
-//import models.PersonalTrainer;
 import models.PlanoDeTreino;
 import models.Treino;
 import models.TreinoExecutado;
 import models.Usuario;
-import negocio.ControladoGenerico;
 import negocio.ServidorAcademia;
 
 public class Principal {
@@ -74,66 +71,39 @@ public class Principal {
 		planoTreino3.getTreinos().inserir(treino1);
 		planoTreino3.getTreinos().inserir(treino2);
 
-//		servidor.getRepositorioDeTreinos().inserir(treino1);
-//		servidor.getRepositorioDeTreinos().inserir(treino2);
-//
-//		servidor.getRepositorioDePlanoDeTreinos().inserir(planoTreino1);
-//		servidor.getRepositorioDePlanoDeTreinos().inserir(planoTreino2);
-//		servidor.getRepositorioDePlanoDeTreinos().inserir(planoTreino3);
-//
-//		servidor.getRepositorioDeTreinosExecutados().inserir(treinoExe1);
-//		servidor.getRepositorioDeTreinosExecutados().inserir(treinoExe2);
-//		servidor.getRepositorioDeTreinosExecutados().inserir(treinoExe3);
-//		servidor.getRepositorioDeTreinosExecutados().inserir(treinoExe4);
+		servidor.inserir(treino1);
+		servidor.inserir(treino2);
+
+		servidor.inserir(planoTreino1);
+		servidor.inserir(planoTreino2);
+		servidor.inserir(planoTreino3);
+
+		servidor.inserir(treinoExe1);
+		servidor.inserir(treinoExe2);
+		servidor.inserir(treinoExe3);
+		servidor.inserir(treinoExe4);
 		
 		} catch (ElementoJaExisteException jaExiste) {
             System.out.println("Elemento já existente");
             jaExiste.printStackTrace();
         }
 		
-//		List<Exercicio> exercicios = ControladoGenerico.getInstance().getRepositorioDeExercicios().listar();
-//		List<Treino> treinos = ControladorGenerico.getInstance().getRepositorioDeTreinos().listar();
-//		List<PlanoDeTreino> planos = ControladorGenerico.getInstance().getRepositorioDePlanoDeTreinos().listar();
-//		List<TreinoExecutado> treinosExecutados = ControladorGenerico.getInstance().getRepositorioDeTreinosExecutados().listar();
-//		List<Usuario> usuarios = ControladorGenerico.getInstance().getRepositorioDeUsuarios().listar();
-		
-//		List<Exercicio> exercicios = ControladorGenerico.getInstance().getExercicios();
-		
-//		RepositorioFileUtil.salvarArquivo(exercicios, "exercicios.dat");
-//		RepositorioFileUtil.salvarArquivo(treinos, "treinos.dat");
-//		RepositorioFileUtil.salvarArquivo(planos, "planoDeTreinos.dat");
-//		RepositorioFileUtil.salvarArquivo(treinosExecutados, "treinosExecutados.dat");
-//		RepositorioFileUtil.salvarArquivo(usuarios, "usuarios.dat");
-		
-//		Object obj1 = RepositorioFileUtil.lerDoArquivo("exercicios.dat");
-//		System.out.println(exercicios);
-		
-//		Object obj2 = RepositorioFileUtil.lerDoArquivo("treinos.dat");
-//		Object obj3 = RepositorioFileUtil.lerDoArquivo("planoDeTreinos.dat");
-//		Object obj4 = RepositorioFileUtil.lerDoArquivo("treinosExecutados.dat");
-//		Object obj5 = RepositorioFileUtil.lerDoArquivo("usuarios.dat");
-		
-//		System.out.println(obj2);
-//		System.out.println(obj3);
-//		System.out.println(obj4);
-//		System.out.println(obj5);
+		System.out.println("LISTA DE TREINOS");
+		System.out.println(servidor.treinoListar());
+		System.out.println("-".repeat(200));
 
-//		System.out.println("LISTA DE TREINOS");
-//		System.out.println(servidor.getRepositorioDeTreinos().listar());
-//		System.out.println("-".repeat(200));
-//
-//		System.out.println("LISTA DE PLANOS DE TREINOS");
-//		System.out.println(servidor.getRepositorioDePlanoDeTreinos().listar());
-//		System.out.println("-".repeat(200));
-//
-//		int frequencia = servidor.consultarFrequenciaCliente((Cliente) cliente3, LocalDate.of(2022, 8, 20),
-//				LocalDate.of(2022, 11, 20));
-//		System.out.printf("A frequencia  de %s foi de %d dia(s) no peridodo.\n", cliente3.getNome(), frequencia);
-//
-//		System.out.println("-".repeat(200));
-//		System.out.println("FREQUENCIA");
-//		List<TreinoExecutado> listaFrequencia = servidor.listarFrequenciaCliente((Cliente) cliente3);
-//		System.out.println(listaFrequencia);
+		System.out.println("LISTA DE PLANOS DE TREINOS");
+		System.out.println(servidor.planoTreinoListar());
+		System.out.println("-".repeat(200));
+
+		int frequencia = servidor.consultarFrequenciaCliente((Cliente) cliente3, LocalDate.of(2022, 8, 20),
+				LocalDate.of(2022, 11, 20));
+		System.out.printf("A frequencia  de %s foi de %d dia(s) no peridodo.\n", cliente3.getNome(), frequencia);
+
+		System.out.println("-".repeat(200));
+		System.out.println("FREQUENCIA");
+		List<TreinoExecutado> listaFrequencia = servidor.listarFrequenciaCliente((Cliente) cliente3);
+		System.out.println(listaFrequencia);
 
 	}
 }

@@ -7,17 +7,17 @@ import exception.ElementoJaExisteException;
 import exception.ElementoNaoExisteException;
 import models.Treino;
 
-public class ControladorTreino {
+public class ControladorTreinos {
 	private IRepositorioGenerico<Treino> repositorioTreino;
-	private static ControladorTreino instance;
+	private static ControladorTreinos instance;
 
-	private ControladorTreino() {
+	private ControladorTreinos() {
 		this.repositorioTreino = new RepositorioGenerico<>("treinos.dat");
 	}
 	
-	public static ControladorTreino getInstance() {
+	public static ControladorTreinos getInstance() {
 		if (instance == null) {
-			instance = new ControladorTreino();
+			instance = new ControladorTreinos();
 		}
 		return instance;
 	}

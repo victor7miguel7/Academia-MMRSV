@@ -11,17 +11,17 @@ import models.Cliente;
 import models.TreinoExecutado;
 
 
-public class ControladorTreinoExecutado {
+public class ControladorTreinosExecutados {
 	private IRepositorioGenerico<TreinoExecutado> repositorioTreinosExecutados;
-	private static ControladorTreinoExecutado instance;
+	private static ControladorTreinosExecutados instance;
 
-	private ControladorTreinoExecutado() {
+	private ControladorTreinosExecutados() {
 		this.repositorioTreinosExecutados = new RepositorioGenerico<>("treinosExecutados.dat");
 	}
 	
-	public static ControladorTreinoExecutado getInstance() {
+	public static ControladorTreinosExecutados getInstance() {
 		if (instance == null) {
-			instance = new ControladorTreinoExecutado();
+			instance = new ControladorTreinosExecutados();
 		}
 		return instance;
 	}

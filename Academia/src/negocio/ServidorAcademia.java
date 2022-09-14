@@ -19,9 +19,9 @@ public class ServidorAcademia {
 
 	private ControladorExercicios controladorExercicios;
 	private ControladorUsuarios controladorUsuarios;
-	private ControladorPlanoTreino controladorPlanoTreino;
-	private ControladorTreino controladorTreino;
-	private ControladorTreinoExecutado controladorTreinoExecutado;
+	private ControladorPlanoTreinos controladorPlanoTreino;
+	private ControladorTreinos controladorTreino;
+	private ControladorTreinosExecutados controladorTreinoExecutado;
 
 	private ServidorAcademia() {
 		this.controladorExercicios = controladorExercicios.getInstance();
