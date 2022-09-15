@@ -24,11 +24,11 @@ public class ServidorAcademia {
 	private ControladorTreinosExecutados controladorTreinoExecutado;
 
 	private ServidorAcademia() {
-		this.controladorExercicios = controladorExercicios.getInstance();
-		this.controladorUsuarios = controladorUsuarios.getInstance();
-		this.controladorPlanoTreino = controladorPlanoTreino.getInstance();
-		this.controladorTreino = controladorTreino.getInstance();
-		this.controladorTreinoExecutado = controladorTreinoExecutado.getInstance();
+		this.controladorExercicios = ControladorExercicios.getInstance();
+		this.controladorUsuarios = ControladorUsuarios.getInstance();
+		this.controladorPlanoTreino = ControladorPlanoTreinos.getInstance();
+		this.controladorTreino = ControladorTreinos.getInstance();
+		this.controladorTreinoExecutado = ControladorTreinosExecutados.getInstance();
 	}
 
 	public static ServidorAcademia getInstance() {
@@ -144,9 +144,10 @@ public class ServidorAcademia {
 	public boolean validarLogin(String email, String senha) {
 		boolean achou = false;
 
-		for (int i = 0; i < controladorUsuarios.listar().size(); i++) {
-			if (controladorUsuarios.listar().get(i).getEmail().equals(email)) {
-				if (controladorUsuarios.listar().get(i).getSenha().equals(senha)) {
+		List<Usuario> b = controladorUsuarios.listar();
+		for (int i = 0; i < b.size() && !achou; i++) {
+			if (b.get(i).getEmail().equals(email)) {
+				if (b.get(i).getSenha().equals(senha)) {
 					achou = true;
 				}
 			}

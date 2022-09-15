@@ -15,7 +15,7 @@ public class ControladorUsuarios {
 	private static ControladorUsuarios instance;
 
 	private ControladorUsuarios() {
-		this.repositorioDeUsuarios = new RepositorioGenerico<>("exercicios.dat");
+		this.repositorioDeUsuarios = new RepositorioGenerico<>("usuarios.dat");
 	}
 
 	public static ControladorUsuarios getInstance() {

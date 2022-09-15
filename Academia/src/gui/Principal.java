@@ -83,6 +83,10 @@ public class Principal {
 		servidor.inserir(treinoExe3);
 		servidor.inserir(treinoExe4);
 		
+		servidor.inserir(cliente1);
+		//servidor.inserir(cliente2);
+		//servidor.inserir(cliente3);
+		
 		} catch (ElementoJaExisteException jaExiste) {
             System.out.println("Elemento já existente");
             jaExiste.printStackTrace();

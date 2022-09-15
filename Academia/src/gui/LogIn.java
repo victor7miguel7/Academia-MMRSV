@@ -34,9 +34,12 @@ public class LogIn {
     private void checkLogin() throws IOException {
         Main m = new Main();
         
-        
-        if(ServidorAcademia.getInstance().validarLogin(username.getText(), password.getText()) == true) {
+        /*if(username.getText().toString().equals("mmrsv") && password.getText().toString().equals("123")) {
 
+            m.changeScene("afterLogin.fxml");
+        }*/
+        if(ServidorAcademia.getInstance().validarLogin(username.getText(), password.getText()) == true) {
+        	wrongLogIn.setText("Login realizado");
             m.changeScene("afterLogin.fxml");
         }
 
