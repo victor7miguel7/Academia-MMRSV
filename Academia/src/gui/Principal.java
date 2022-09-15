@@ -1,4 +1,4 @@
-package gui;
+/*package gui;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Period;
@@ -106,4 +106,4 @@ public class Principal {
 		System.out.println(listaFrequencia);
 
 	}
-}
+}*/
