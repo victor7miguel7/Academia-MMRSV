@@ -140,5 +140,19 @@ public class ServidorAcademia {
 		}
 		return novaLista;
 	}
+	
+	public boolean validarLogin(String email, String senha) {
+		boolean achou = false;
+
+		for (int i = 0; i < controladorUsuarios.listar().size(); i++) {
+			if (controladorUsuarios.listar().get(i).getEmail().equals(email)) {
+				if (controladorUsuarios.listar().get(i).getSenha().equals(senha)) {
+					achou = true;
+				}
+			}
+
+		}
+		return achou;
+	}
 
 }
