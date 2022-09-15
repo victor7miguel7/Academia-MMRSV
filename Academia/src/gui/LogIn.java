@@ -1,4 +1,6 @@
 package gui;
+
+import negocio.ServidorAcademia;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,7 +33,8 @@ public class LogIn {
 
     private void checkLogin() throws IOException {
         Main m = new Main();
-        if(username.getText().toString().equals("mmrsv") && password.getText().toString().equals("123")) {
+        
+        if(ServidorAcademia.getInstance().validarLogin(username.getText(), password.getText()) == true) {
 
             m.changeScene("afterLogin.fxml");
         }
