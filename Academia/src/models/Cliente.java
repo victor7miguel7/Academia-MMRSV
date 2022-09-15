@@ -63,6 +63,4 @@ public class Cliente extends Usuario implements Serializable{
 		return "Cliente: " + super.getNome();
 	}
 
-	
-
 }
