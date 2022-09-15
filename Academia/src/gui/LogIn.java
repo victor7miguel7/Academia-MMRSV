@@ -34,6 +34,7 @@ public class LogIn {
     private void checkLogin() throws IOException {
         Main m = new Main();
         
+        
         if(ServidorAcademia.getInstance().validarLogin(username.getText(), password.getText()) == true) {
 
             m.changeScene("afterLogin.fxml");
