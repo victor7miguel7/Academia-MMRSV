@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import models.Login;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
@@ -38,7 +39,8 @@ public class LogIn {
 
             m.changeScene("afterLogin.fxml");
         }*/
-        if(ServidorAcademia.getInstance().validarLogin(username.getText(), password.getText()) == true) {
+        Login login = new Login(username.getText().toString(), password.getText().toString());
+        if(ServidorAcademia.getInstance().validarLogin(login)) {
         	wrongLogIn.setText("Login realizado");
             m.changeScene("afterLogin.fxml");
         }

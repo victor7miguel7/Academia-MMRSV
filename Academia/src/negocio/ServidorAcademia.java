@@ -8,6 +8,7 @@ import exception.ElementoJaExisteException;
 import exception.ElementoNaoExisteException;
 import models.Cliente;
 import models.Exercicio;
+import models.Login;
 import models.PlanoDeTreino;
 import models.Treino;
 import models.TreinoExecutado;
@@ -141,19 +142,17 @@ public class ServidorAcademia {
 		return novaLista;
 	}
 	
-	public boolean validarLogin(String email, String senha) {
-		boolean achou = false;
+	public boolean validarLogin(Login login) {
+		boolean igual = false;
 
-		List<Usuario> b = controladorUsuarios.listar();
-		for (int i = 0; i < b.size() && !achou; i++) {
-			if (b.get(i).getEmail().equals(email)) {
-				if (b.get(i).getSenha().equals(senha)) {
-					achou = true;
-				}
+		List<Usuario> usuarios = controladorUsuarios.listar();
+
+		for (int i = 0; i < usuarios.size(); i++) {
+			if (usuarios.get(i).getLogin().compare(login)) {
+				igual = true;
 			}
-
 		}
-		return achou;
+		return igual;
 	}
 
 }

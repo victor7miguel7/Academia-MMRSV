@@ -13,9 +13,9 @@ public class Cliente extends Usuario implements Serializable{
 	private double altura;
 	private double imc;
 
-	public Cliente(String id, String nome, String genero, String email, String senha, LocalDate dtNascimento,
+	public Cliente(String id, String nome, String genero, Login login, LocalDate dtNascimento,
 			double peso, double altura) {
-		super(id, nome, email, senha, dtNascimento);
+		super(id, nome, login, dtNascimento);
 		this.genero = genero;
 		this.peso = peso;
 		this.altura = altura;

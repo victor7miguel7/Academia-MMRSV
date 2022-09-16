@@ -4,9 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-
-import dados.IRepositorioGenerico;
-import dados.RepositorioGenerico;
+import java.util.List;
 
 public class PlanoDeTreino implements Serializable{
 
@@ -15,13 +13,13 @@ public class PlanoDeTreino implements Serializable{
 	private LocalDate dataInicio;
 	private Period duracao;
 	private Cliente cliente;
-	private IRepositorioGenerico<Treino> treinos;
+	private List<Treino> treinos;
 
-	public PlanoDeTreino(LocalDate dataInicio, Period duracao, Cliente cliente) {
+	public PlanoDeTreino(LocalDate dataInicio, Period duracao, Cliente cliente, List<Treino> treinos) {
 		this.dataInicio = dataInicio;
 		this.duracao = duracao;
 		this.cliente = cliente;
-		this.treinos = new RepositorioGenerico<>("planoDeTreinos.dat");
+		this.treinos = treinos;
 	}
 
 	public LocalDate getDataInicio() {
@@ -36,13 +34,14 @@ public class PlanoDeTreino implements Serializable{
 		return cliente;
 	}
 
-	public IRepositorioGenerico<Treino> getTreinos() {
+	public List<Treino> getTreinos() {
 		return treinos;
 	}
+	
 
 	public String toString() {
 		return "\nPlanoDeTreino de " + cliente + "\nData de Inicio:" + dataInicio.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + 
-				"\nDuracao: " + duracao.getDays() + " dias"  + treinos.listar();
+				"\nDuracao: " + duracao.getDays() + " dias"  + treinos;
 	}
 
 }

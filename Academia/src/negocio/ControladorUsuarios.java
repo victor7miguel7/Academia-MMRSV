@@ -1,12 +1,12 @@
 package negocio;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dados.IRepositorioGenerico;
 import dados.RepositorioGenerico;
 import exception.ElementoJaExisteException;
 import exception.ElementoNaoExisteException;
+import models.Login;
 import models.Usuario;
 
 public class ControladorUsuarios {
@@ -41,18 +41,17 @@ public class ControladorUsuarios {
 		this.repositorioDeUsuarios.atualizar(newObj);
 	}
 
-	public boolean validarLogin(String email, String senha) {
-		boolean achou = false;
+	public boolean validarLogin(Login login) {
+		boolean igual = false;
 
-		for (int i = 0; i < repositorioDeUsuarios.listar().size(); i++) {
-			if (repositorioDeUsuarios.listar().get(i).getEmail().equals(email)) {
-				if (repositorioDeUsuarios.listar().get(i).getSenha().equals(senha)) {
-					achou = true;
-				}
+		List<Usuario> usuarios = repositorioDeUsuarios.listar();
+
+		for (int i = 0; i < usuarios.size(); i++) {
+			if (usuarios.get(i).getLogin().compare(login)) {
+				igual = true;
 			}
-
 		}
-		return achou;
+		return igual;
 	}
 
 }

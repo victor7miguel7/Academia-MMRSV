@@ -3,35 +3,29 @@ package models;
 import java.time.LocalDate;
 
 public abstract class Usuario {
-	
+
 	private String id;
 	private String nome;
-	private String email;
-	private String senha;
+	private Login login;
 	private LocalDate dtNascimento;
-	
-	public Usuario(String id, String nome, String email, String senha, LocalDate dtNascimento) {
+
+	public Usuario(String id, String nome, Login login, LocalDate dtNascimento) {
 		this.id = id;
 		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
+		this.login = login;
 		this.dtNascimento = dtNascimento;
 	}
 
-	public String getEmail() {
-		return email;
+	public Login getLogin() {
+		return login;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setLogin(Login login) {
+		this.login = login;
 	}
 
 	public String getNome() {
 		return nome;
-	}
-
-	public String getSenha() {
-		return senha;
 	}
 
 	public LocalDate getDtNascimento() {
@@ -41,8 +35,5 @@ public abstract class Usuario {
 	public String getId() {
 		return id;
 	}
-	
-	
 
 }
-	

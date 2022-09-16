@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="517.0" fitWidth="248.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../OneDrive/Documentos/Java%20Projects/JavaFxLogInForm/loginForm/src/img/backgroudAcademia.jpg" />
+                  <Image url="img/backgroudAcademia.jpg" />
                </image>
             </ImageView>
          </children>
