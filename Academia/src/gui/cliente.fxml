@@ -43,10 +43,10 @@
                   <Label GridPane.columnIndex="1" />
                   <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label fx:id="lblGenero" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label fx:id="lblID" text="Label" GridPane.columnIndex="1" />
-                  <Label fx:id="lblPeso" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="lblAltura" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="lblGenero" onDragDetected="#importarCliente" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="lblID" onDragDetected="#importarCliente" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="lblPeso" onDragDetected="#importarCliente" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="lblAltura" onDragDetected="#importarCliente" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>
